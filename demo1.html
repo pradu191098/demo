@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="only sale.css">
+     <style>
+         #searchbar{
+	margin-left: 15%;
+	padding:15px;
+	border-radius: 10px;
+}
+
+input[type=text] {
+	width: 30%;
+	-webkit-transition: width 0.15s ease-in-out;
+	transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus,
+		change its width to 100% */
+input[type=text]:focus {
+	width: 70%;
+}
+
+#list{
+	font-size: 1.5em;
+	margin-left: 90px;
+}
+
+.animals{
+display: list-item;	
+}
+
+     </style>
+</head>
+<body>
+    
+        <!-- input tag -->
+        <input id="searchbar" onkeyup="search_animal()" type="text"
+            name="search" placeholder="Search animals..">
+        
+        <!-- ordered list -->
+        <ol id='list'>
+            <li class="animals">Transporter</li>
+            <li class="animals">Gem, Diamonds & Jewellery</li>
+            <li class="animals">Stone, Tiles, Glass</li>
+            <li class="animals">Food, Processing, Hospitality</li>
+            <li class="animals">Packaging, Printing, Paper</li>
+            <li class="animals">Business Email Ids</li>
+            <li class="animals">Manufacturares Data</li>
+            <li class="animals">Business Mobile Data</li>
+            <li class="animals">FMCG Data</li>
+            <li class="animals">MSME Members</li>
+            <li class="animals">CEO, Director, MD, President</li>
+        </ol>
+        
+        <!-- linking javascript -->
+        <script src="./animals.js"></script>
+    
+    
+
+        <script>
+            // JavaScript code
+      function search_animal() {
+          let input = document.getElementById('searchbar').value
+          input=input.toLowerCase();
+          let x = document.getElementsByClassName('animals');
+          
+          for (i = 0; i < x.length; i++) {
+              if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                  x[i].style.display="none";
+              }
+              else {
+                  x[i].style.display="list-item";				
+              }
+          }
+      }
+      
+          </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
